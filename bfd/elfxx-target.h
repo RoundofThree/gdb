@@ -661,6 +661,9 @@
 #ifndef elf_backend_can_make_multiple_eh_frame
 #define elf_backend_can_make_multiple_eh_frame 0
 #endif
+#ifndef elf_backend_eh_frame_augmentation_char
+#define elf_backend_eh_frame_augmentation_char	NULL
+#endif
 #ifndef elf_backend_encode_eh_address
 #define elf_backend_encode_eh_address		_bfd_elf_encode_eh_address
 #endif
@@ -895,6 +898,7 @@ static const struct elf_backend_data elfNN_bed =
   elf_backend_can_make_relative_eh_frame,
   elf_backend_can_make_lsda_relative_eh_frame,
   elf_backend_can_make_multiple_eh_frame,
+  elf_backend_eh_frame_augmentation_char,
   elf_backend_encode_eh_address,
   elf_backend_write_section,
   elf_backend_elfsym_local_is_section,
